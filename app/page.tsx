@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import {Image1, Image2, Image3} from '../data/imges'
 
 export default function Home() {
   return (
@@ -9,164 +10,36 @@ export default function Home() {
       <div className='max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'>
         <div className='grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'>
           {/* images will go here */}
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
-          <BlurImage />
+          {Image1.map((img,index)=>(
+            <BlurImage key={index} img={img} />
+
+          ))}
+          {Image2.map((img,index)=>(
+            <BlurImage key={index} img={img} />
+
+          ))}
+          {Image3.map((img,index)=>(
+            <BlurImage key={index} img={img} />
+
+          ))}
+        
+       
+         
+         
         </div>
       </div>
     </>
   );
 }
 
-function BlurImage() {
+function BlurImage({img}) {
   const [isLoading, setLoading] = useState(true);
   return (
     <a href='#' className='group'>
       <div className='aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8 w-full overflow-hidden rounded-lg bg-gray-200'>
+        
         <Image
-          src='/1.jpg'
+          src={img.url}
           width={700}
           height={600}
           alt='sss'
